@@ -1,4 +1,4 @@
-s
+import streamlit as st
 from scipy.stats import binom
 
 def calcular_probabilidade_aceitacao(tamanho_amostra, itens_aceitos, taxa_defeitos):
@@ -23,15 +23,15 @@ def calcular_risco_consumidor(tamanho_amostra, itens_aceitos, taxa_defeitos_inac
 
 def main():
     # Solicitar ao usuário os valores de entrada
-    tamanho_lote = int(input("Informe o tamanho do lote (N): "))
-    tamanho_amostra = int(input("Informe o tamanho da amostra (n): "))
-    itens_aceitos = int(input("Informe o número de itens aceitáveis (a): "))
-    taxa_defeitos_aceitaveis = float(input("Informe a taxa de defeitos aceitável (NQA) (0 a 1): "))
-    numero_lotes = int(input("Informe o número de lotes: "))
-    custo_unitario = float(input("Informe o custo unitário: R$ "))
-    custo_lote_rejeitado = float(input("Informe o custo de deslocamento por lote rejeitado: R$ "))
-    taxa_defeitos = float(input("Informe o histórico da taxa de defeituosos do fornecedor (0 a 1): "))
-    taxa_defeitos_inaceitaveis = float(input("Informe a taxa de defeitos inaceitável (PTDL) (0 a 1): "))
+    tamanho_lote = int(st.number_input("Informe o tamanho do lote (N): "))
+    tamanho_amostra = int(st.number_input("Informe o tamanho da amostra (n): "))
+    itens_aceitos = int(st.number_input("Informe o número de itens aceitáveis (a): "))
+    taxa_defeitos_aceitaveis = float(st.number_input("Informe a taxa de defeitos aceitável (NQA) (0 a 1): "))
+    numero_lotes = int(st.number_input("Informe o número de lotes: "))
+    custo_unitario = float(st.number_input("Informe o custo unitário: R$ "))
+    custo_lote_rejeitado = float(st.number_input("Informe o custo de deslocamento por lote rejeitado: R$ "))
+    taxa_defeitos = float(st.number_input("Informe o histórico da taxa de defeituosos do fornecedor (0 a 1): "))
+    taxa_defeitos_inaceitaveis = float(st.number_input("Informe a taxa de defeitos inaceitável (PTDL) (0 a 1): "))
 
     # Calcular a probabilidade de aceitação (NQA e Real do Fornecedor)
     taxa_aceitacao = calcular_probabilidade_aceitacao(tamanho_amostra, itens_aceitos, taxa_defeitos)
