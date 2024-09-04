@@ -23,15 +23,15 @@ def calcular_risco_consumidor(tamanho_amostra, itens_aceitos, taxa_defeitos_inac
 
 def main():
     # Solicitar ao usuário os valores de entrada
-    tamanho_lote = int(st.number_input("Informe o tamanho do lote (N): "))
-    tamanho_amostra = int(st.number_input("Informe o tamanho da amostra (n): "))
-    itens_aceitos = int(st.number_input("Informe o número de itens aceitáveis (a): "))
-    taxa_defeitos_aceitaveis = float(st.number_input("Informe a taxa de defeitos aceitável (NQA) (0 a 1): "))
-    numero_lotes = int(st.number_input("Informe o número de lotes: "))
-    custo_unitario = float(st.number_input("Informe o custo unitário: R$ "))
-    custo_lote_rejeitado = float(st.number_input("Informe o custo de deslocamento por lote rejeitado: R$ "))
-    taxa_defeitos = float(st.number_input("Informe o histórico da taxa de defeituosos do fornecedor (0 a 1): "))
-    taxa_defeitos_inaceitaveis = float(st.number_input("Informe a taxa de defeitos inaceitável (PTDL) (0 a 1): "))
+    tamanho_lote = st.number_input("Informe o tamanho do lote (N): ")
+    tamanho_amostra = st.number_input("Informe o tamanho da amostra (n): ")
+    itens_aceitos = st.number_input("Informe o número de itens aceitáveis (a): ")
+    taxa_defeitos_aceitaveis = st.number_input("Informe a taxa de defeitos aceitável (NQA) (0 a 1): ")
+    numero_lotes = st.number_input("Informe o número de lotes: ")
+    custo_unitario = st.number_input("Informe o custo unitário: R$ ")
+    custo_lote_rejeitado = st.number_input("Informe o custo de deslocamento por lote rejeitado: R$ ")
+    taxa_defeitos = st.number_input("Informe o histórico da taxa de defeituosos do fornecedor (0 a 1): ")
+    taxa_defeitos_inaceitaveis = st.number_input("Informe a taxa de defeitos inaceitável (PTDL) (0 a 1): ")
 
     # Calcular a probabilidade de aceitação (NQA e Real do Fornecedor)
     taxa_aceitacao = calcular_probabilidade_aceitacao(tamanho_amostra, itens_aceitos, taxa_defeitos)
@@ -61,16 +61,16 @@ def main():
 
 
     # Exibir os resultados
-    print(f"")
-    print(f"A probabilidade de aceitação real (fornecedor) do lote é: {taxa_aceitacao:.4f}")
-    print(f"A probabilidade de rejeição injusta do lote do fornecedor é: {taxa_injustamente_rejeitada:.4f}")
-    print(f"A probabilidade de aceitação desejado do lote é: {taxa_aceitacao_NQA:.4f}")
-    print(f"A probabilidade de rejeição injusta do lote do fornecedor é: {taxa_injustamente_rejeitada_NQA:.4f}")
-    print(f"O ITM (Índice de Tamanho do Lote) é: {ITM:.2f}")
-    print(f"O custo de inspeção é: R$ {custo_inspecao:.2f}")
-    print(f"O custo de deslocamento é: R$ {custo_deslocamento:.2f}")
-    print(f"O custo total é: R$ {custo_total:.2f}")
-    print(f"O risco do consumidor (aceitação injusta) com um lote (PTML: {taxa_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
+    st.writhe(f"")
+    st.writhe(f"A probabilidade de aceitação real (fornecedor) do lote é: {taxa_aceitacao:.4f}")
+    st.writhe(f"A probabilidade de rejeição injusta do lote do fornecedor é: {taxa_injustamente_rejeitada:.4f}")
+    st.writhe(f"A probabilidade de aceitação desejado do lote é: {taxa_aceitacao_NQA:.4f}")
+    st.writhe(f"A probabilidade de rejeição injusta do lote do fornecedor é: {taxa_injustamente_rejeitada_NQA:.4f}")
+    st.writhe(f"O ITM (Índice de Tamanho do Lote) é: {ITM:.2f}")
+    st.writhe(f"O custo de inspeção é: R$ {custo_inspecao:.2f}")
+    st.writhe(f"O custo de deslocamento é: R$ {custo_deslocamento:.2f}")
+    st.writhe(f"O custo total é: R$ {custo_total:.2f}")
+    st.writhe(f"O risco do consumidor (aceitação injusta) com um lote (PTML: {taxa_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
 
 
 if __name__ == "__main__":
